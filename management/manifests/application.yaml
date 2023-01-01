@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: delivery-apps
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: false
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: argocd
+  source:
+    path: delivery/apps
+    repoURL: git@github.com:nallenscott/titan.git
+    targetRevision: master

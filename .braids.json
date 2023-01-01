@@ -1,0 +1,17 @@
+{
+  "config_version": 1,
+  "mirrors": {
+    "delivery/shared/crds": {
+      "url": "https://github.com/prometheus-community/helm-charts",
+      "branch": "main",
+      "path": "charts/kube-prometheus-stack/crds",
+      "revision": "67484fce87f7d41f943085a66b0303eb12bcd8d3"
+    },
+    "management/shared/crds": {
+      "url": "https://github.com/argoproj/argo-cd",
+      "branch": "master",
+      "path": "manifests/crds",
+      "revision": "052a5d2f69aa6bcc61a9a744d1e46e99490fda59"
+    }
+  }
+}
