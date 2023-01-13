@@ -20,24 +20,26 @@ Titan assumes you're running on a Mac, and have the following installed. If you 
 ## Getting started
 
 1. Create a fork of this repo, and clone it to your local machine.
-2. Open a terminal on the clone directory and run `./titan init`.
+2. Open a terminal on the cloned directory and run `./titan init`.
 3. When you're done, run `./titan kill` to tear down the clusters.
 
-This will create local Kind clusters for management and delivery, and deploy ArgoCD to the management cluster. It will also deploy Prometheus, Thanos, and Grafana to the delivery cluster.
+Titan will create local Kind clusters for management and delivery, and deploy ArgoCD to the management cluster. It will also deploy Prometheus, Thanos, and Grafana to the delivery cluster.
 
 ### Delivery cluster
 
-ArgoCD needs to be able to access the delivery cluster, so it can deploy the applications. To do this, titan uses a kind [config file](https://kind.sigs.k8s.io/docs/user/configuration/) to create a cluster with an `apiServerAddress` set to the host machine's IP address.
+ArgoCD needs access to the delivery cluster, so it can deploy the applications. To do this, titan uses a kind [config file](https://kind.sigs.k8s.io/docs/user/configuration/) to create a cluster with an `apiServerAddress` set to the host machine's IP address.
 
 As an added convenience, the build script will attempt to detect your IP address, using the `en0` and `en1` interfaces, and update the config for you. If it can't detect your IP address, you can set it manually in the `delivery/cluster.yaml` file.
 
 ### Repository access
 
-ArgoCD needs access to the repo. GitOps works by pulling the manifests from a git repository, and applying them to the cluster. If you're happy with the manifests in this repo, you can leave them as-is. If you want to make changes, you'll need to fork the repo, and edit the manifests to point to your fork (use the `https` url, not the `ssh` url):
+ArgoCD needs access to the repo. GitOps works by pulling the manifests from a git repository, and applying them to the cluster. If you're happy with the manifests in this repo, you can leave them as-is. If you want to make changes, you'll need to fork the repo, and edit the manifests to point to your fork (use `https`, not `ssh`):
 
-- `repoURL` in `management/manifests/application.yaml`
-- `url` in `management/manifests/repository.yaml`
-- `repoURL` in `delivery/manifests/shared.yaml`
+| File | Field |
+| --- | --- |
+| `management/manifests/application.yaml` | `repoURL` |
+| `management/manifests/repository.yaml` | `url` |
+| `delivery/manifests/shared.yaml` | `repoURL` |
 
 ### Accessing the UIs
 
