@@ -21,7 +21,7 @@ kubectl create namespace argocd
 helm repo add argo https://argoproj.github.io/argo-helm
 
 # Install ArgoCD CRDs
-kubectl apply -f shared/crds
+kubectl apply -f shared/crds --server-side
 
 # Install ArgoCD helm chart
 helm upgrade --install argocd argo/argo-cd \
@@ -54,10 +54,8 @@ argocd login localhost:8080 \
 # Add the delivery cluster
 argocd cluster add kind-delivery --name delivery -y
 
-# Add the current repo
-REPO_PATH=$(git remote get-url origin)
-argocd repo add $REPO_PATH \
-  --ssh-private-key-path ~/.ssh/id_rsa
+# Add the git repository
+kubectl apply -n argocd -f manifests/repository.yaml
 
 # Create the project
 kubectl apply -n argocd -f manifests/app-project.yaml
