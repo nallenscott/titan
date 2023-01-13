@@ -1,7 +1,7 @@
-kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
+kind: Cluster
 networking:
-  apiServerAddress: <host_ip>
+  apiServerAddress: 192.168.156.233
   apiServerPort: 8888
 nodes:
 - role: control-plane

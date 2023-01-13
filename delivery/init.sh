@@ -11,11 +11,6 @@ if [ -z "$host_ip" ]; then
   host_ip=$(ipconfig getifaddr en1)
 fi
 
-# create cluster.yaml if needed
-if [ ! -f cluster.yaml ]; then
-  cp cluster.template cluster.yaml
-fi
-
 # update cluster server address
 sed -i '' "s/apiServerAddress: .*$/apiServerAddress: ${host_ip}/" cluster.yaml
 
@@ -26,8 +21,3 @@ sed -i '' "s/apiServerAddress: .*$/apiServerAddress: ${host_ip}/" cluster.yaml
 if ! kind get clusters | grep -q "delivery"; then
   kind create cluster --name delivery --config cluster.yaml
 fi
-
-## CLEANUP
-## -----------------
-
-rm -f cluster.yaml
