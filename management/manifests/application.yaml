@@ -16,5 +16,5 @@ spec:
     namespace: argocd
   source:
     path: delivery/apps
-    repoURL: git@github.com:nallenscott/titan.git
+    repoURL: https://github.com/nallenscott/titan
     targetRevision: master

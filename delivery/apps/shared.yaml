@@ -27,7 +27,7 @@ spec:
         namespace: default
       source:
         path: delivery/shared
-        repoURL: git@github.com:nallenscott/titan.git
+        repoURL: https://github.com/nallenscott/titan
         targetRevision: master
         directory:
           recurse: true
