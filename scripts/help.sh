@@ -4,7 +4,7 @@ source scripts/header.sh
 
 # Print help message with available commands
 echo ""
-echo "Usage: titan <command>"
+echo "Usage: ./titan <command>"
 echo ""
 echo "Available commands:"
 echo ""
