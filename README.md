@@ -3,6 +3,16 @@
   titan<br>
 </h1>
 
+> **Table of Contents**
+> * [Introduction](#introduction)
+> * [Prerequisites](#prerequisites)
+> * [Getting started](#getting-started)
+>   * [Delivery cluster](#delivery-cluster)
+>   * [Repository access](#repository-access)
+>   * [Accessing the UIs](#accessing-the-uis)
+>   * [Custom resources](#custom-resources)
+> * [Using the cli](#using-the-cli)
+
 ## Introduction
 
 Titan is a sandbox for deploying [Prometheus](https://prometheus.io), [Thanos](https://thanos.io), and [Grafana](https://grafana.com) to K8s with [ArgoCD](https://argoproj.github.io/cd/).
