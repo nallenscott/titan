@@ -11,11 +11,13 @@ Titan is a sandbox for deploying [Prometheus](https://prometheus.io), [Thanos](h
 
 Titan assumes you're running on a Mac, and have the following installed. If you don't have them, you can install them with [Homebrew](https://brew.sh/):
 
-- [Docker](https://www.docker.com/)
-- [Kind](https://kind.sigs.k8s.io/)
-- [Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
-- [ArgoCD](https://argoproj.github.io/argo-cd/getting_started/)
-- [Helm](https://helm.sh/)
+| Service | Installation |
+| --- | --- |
+| [Docker](https://www.docker.com/) | `brew install docker` |
+| [Kind](https://kind.sigs.k8s.io/) | `brew install kind` |
+| [Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) | `brew install kubectl` |
+| [Helm](https://helm.sh/) | `brew install helm` |
+| [ArgoCD](https://argoproj.github.io/argo-cd/getting_started/) | `brew install argocd` |
 
 ## Getting started
 
@@ -59,10 +61,10 @@ List of values to pass into `kubectl port-forward`:
 
 | Service | Namespace | Ports |
 | --- | --- | --- |
-| argocd-server | argocd | 8080:443 |
-| grafana | monitoring | 3000:3000 |
-| prometheus | monitoring | 9090:9090 |
-| thanos-query | monitoring | 9090:9090 |
+| argocd-server | argocd | `8080:443` |
+| grafana | monitoring | `3000:3000` |
+| prometheus | monitoring | `9090:9090` |
+| thanos-query | monitoring | `9090:9090` |
 
 ### Custom resources
 
