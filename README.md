@@ -88,15 +88,10 @@ $ kubectl apply -f {management|delivery}/shared/crds
 
 ## Using the CLI
 
-Titan provides a cli to help you raise and lower the stack:
+Titan provides a cli to help you raise and lower the stack. It's a simple wrapper around `kind`, `kubectl`, and `helm`, so you can use those tools directly if you prefer.
 
-```bash
-# Boot up clusters
-$ ./titan init
-
-# Tear down clusters
-$ ./titan kill
-
-# Print help text
-$ ./titan help
-```
+| Command | Description |
+| --- | --- |
+| `./titan init` | Create clusters and deploy apps. |
+| `./titan kill` | Tear down clusters. |
+| `./titan help` | Print help text. |

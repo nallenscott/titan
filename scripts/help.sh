@@ -8,7 +8,7 @@ echo "Usage: ./titan <command>"
 echo ""
 echo "Available commands:"
 echo ""
-ls scripts | grep -v header.sh | sed 's/^/- /' | sed 's/\.sh//'
+ls scripts | grep -v "header.sh\|help.sh" | sed 's/^/- /' | sed 's/\.sh//'
 echo ""
 
 exit 0
