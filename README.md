@@ -11,7 +11,7 @@
 >   * [Repository access](#repository-access)
 >   * [Accessing the UIs](#accessing-the-uis)
 >   * [Custom resources](#custom-resources)
-> * [Using the cli](#using-the-cli)
+> * [Using the CLI](#using-the-cli)
 
 ## Introduction
 
@@ -49,9 +49,9 @@ ArgoCD needs access to the repo. GitOps works by pulling the manifests from a gi
 
 | File | Field |
 | --- | --- |
-| `management/manifests/application.yaml` | `repoURL` |
-| `management/manifests/repository.yaml` | `url` |
-| `delivery/manifests/shared.yaml` | `repoURL` |
+| management/manifests/application.yaml | `repoURL` |
+| management/manifests/repository.yaml | `url` |
+| delivery/manifests/shared.yaml | `repoURL` |
 
 ### Accessing the UIs
 
@@ -86,7 +86,7 @@ $ kubectl config use-context kind-{management|delivery}
 $ kubectl apply -f {management|delivery}/shared/crds
 ```
 
-## Using the cli
+## Using the CLI
 
 Titan provides a cli to help you raise and lower the stack:
 
